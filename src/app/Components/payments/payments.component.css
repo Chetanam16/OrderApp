@@ -1,0 +1,89 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f9;
+}
+
+h1 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.payment-container {
+  max-width: 500px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+h2 {
+  font-size: 20px;
+  color: #4CAF50;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.product-details p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Form Field Styles */
+.mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.mat-form-field .mat-label {
+  font-size: 14px;
+}
+
+.mat-input-element, mat-select {
+  font-size: 14px;
+}
+
+.payment-method h3,
+.shipping-address h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Button Styles */
+.payment-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+/* payment.component.css */
+.error-message {
+  color: red;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,31 @@
+.mat-toolbar-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #333;
+  color: #f0f0f0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.mat-toolbar-row span {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.mat-toolbar-row .menu {
+  display: flex;
+  gap: 15px;
+}
+
+.mat-toolbar-row .menu a {
+  color: #f0f0f0;
+  text-decoration: none;
+}
+
+.mat-toolbar-row .menu a:hover {
+  text-decoration: underline;
+}

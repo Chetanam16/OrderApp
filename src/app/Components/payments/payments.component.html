@@ -1,0 +1,63 @@
+<!-- <p>payments works!</p> -->
+<h1>Payment Page</h1>
+<div class="error-message" *ngIf="errorMessage"></div>
+<div class="payment-container" >
+  <h2>Product Details</h2>
+  <div *ngIf="product">
+  <h2>Payment for {{ product?.name }}</h2>
+  <div class="product-details">
+    <p>Price: ${{ product?.amount }}</p>
+    <img *ngIf="product?.image" [src]="product?.image" alt="{{ product?.name }}" style="width: 200px; height: auto;" />
+
+  </div>
+
+  <!-- Payment Form for Shipping Address -->
+  <form [formGroup]="paymentForm" (ngSubmit)="onSubmitPayment()">
+    <div class="shipping-address">
+      <h3>Shipping Address</h3>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="address" required />
+        <mat-error *ngIf="paymentForm.get('address')?.hasError('required')">
+          Address is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Phone Number</mat-label>
+        <input matInput formControlName="phone" required type="tel" />
+        <mat-error *ngIf="paymentForm.get('phone')?.hasError('required')">
+          Phone number is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- Payment Method Selection -->
+    <div class="payment-method">
+      <h3>Select Payment Method</h3>
+      <mat-form-field appearance="outline">
+        <mat-label>Payment Method</mat-label>
+        <mat-select formControlName="paymentMethod" required>
+          <mat-option value="creditCard">Credit Card</mat-option>
+          <mat-option value="paypal">PayPal</mat-option>
+        </mat-select>
+        <mat-error *ngIf="paymentForm.get('paymentMethod')?.hasError('required')">
+          Payment method is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- Payment Button -->
+    <div class="payment-buttons">
+<button mat-raised-button color="primary" type="submit" [disabled]="!paymentForm.invalid">
+  Submit Payment
+</button>
+       
+    </div>
+  </form>
+</div>
+</div>
+<div *ngIf="errorMessage && !product">
+  <p>{{ errorMessage }}</p>
+</div>
